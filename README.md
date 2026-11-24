@@ -35,18 +35,18 @@ The prototype implements the central workflow in a browser:
 
 ```mermaid
 flowchart TD
-    W[Worker] -->|Voice note or text| CH[WhatsApp / Web demo]
+    W[Worker] -->|Voice note or text| CH["WhatsApp / Web demo"]
     E[Local employer] -->|Voice post or web form| CH
     CH --> API[FastAPI backend]
-    API --> STT[Speech-to-text<br/>Whisper / Bhashini - planned]
-    STT --> EXT[Skill, area and wage extraction<br/>LLM - planned]
-    EXT --> PROF[Worker / job profile]
-    PROF --> DB[(PostgreSQL + PostGIS<br/>SQLite in this demo)]
-    DB --> MATCH[Matching engine<br/>Skill + distance + availability]
-    MATCH --> TOP[Top 3 nearby jobs]
-    TOP --> ALERT[WhatsApp alerts<br/>planned]
+    API --> STT["Speech-to-text — Whisper / Bhashini (planned)"]
+    STT --> EXT["Skill, area and wage extraction — LLM (planned)"]
+    EXT --> PROF["Worker / job profile"]
+    PROF --> DB[("PostgreSQL + PostGIS — SQLite in this demo")]
+    DB --> MATCH["Matching engine — Skill + distance + availability"]
+    MATCH --> TOP["Top 3 nearby jobs"]
+    TOP --> ALERT["WhatsApp alerts (planned)"]
     TOP --> UI[Worker results in this demo]
-    UI --> EMP[Employer dashboard / contact<br/>planned]
+    UI --> EMP["Employer dashboard / contact (planned)"]
 ```
 
 ### Worker journey
@@ -57,8 +57,8 @@ flowchart LR
     B --> C[Find open jobs]
     C --> D[Rank by skill and distance]
     D --> E[Show top 3 matches]
-    E --> F[Worker contacts employer - planned]
-    F --> G[Complete job and rate - planned]
+    E --> F["Worker contacts employer (planned)"]
+    F --> G["Complete job and rate (planned)"]
 ```
 
 ### Matching logic in this demo
